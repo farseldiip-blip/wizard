@@ -1,0 +1,198 @@
+op<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COFFEE WIZARD - The Ritual</title>
+  <meta name="description" content="Coffee Wizard — a nocturnal ritual dedicated to precision, silence, and the perfect pour. Alexandria & Mansoura.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- TopAppBar -->
+  <header class="app-bar">
+    <button class="app-bar__action" id="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open menu">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+    <div class="app-bar__brand">
+      <img class="app-bar__logo" src="assets/images/logo.png" alt="Coffee Wizard logo" width="32" height="32">
+      <span class="app-bar__word">COFFEE WIZARD</span>
+    </div>
+    <a class="app-bar__action" href="#menu" aria-label="Order from the menu">
+      <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+    </a>
+  </header>
+
+  <!-- Navigation Drawer (Full Screen Overlay) -->
+  <nav class="menu-overlay" id="nav-menu" aria-label="Menu">
+    <button class="menu-overlay__close" id="menu-close" aria-label="Close menu">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+    <div class="menu-overlay__heading">
+      <h2>COFFEE WIZARD</h2>
+    </div>
+    <div class="menu-overlay__links">
+      <a class="menu-overlay__link" href="#ritual" data-curtain-close>
+        <span class="material-symbols-outlined" aria-hidden="true">auto_fix_high</span>
+        <span class="menu-overlay__label">The Ritual</span>
+      </a>
+      <a class="menu-overlay__link" href="#menu" data-curtain-close>
+        <span class="material-symbols-outlined" aria-hidden="true">restaurant_menu</span>
+        <span class="menu-overlay__label">Menu</span>
+      </a>
+      <a class="menu-overlay__link" href="#locations" data-curtain-close>
+        <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+        <span class="menu-overlay__label">Locations</span>
+      </a>
+      <a class="menu-overlay__link" href="#gallery" data-curtain-close>
+        <span class="material-symbols-outlined" aria-hidden="true">gallery_thumbnail</span>
+        <span class="menu-overlay__label">Gallery</span>
+      </a>
+      <a class="menu-overlay__link" href="#contact" data-curtain-close>
+        <span class="material-symbols-outlined" aria-hidden="true">chat_bubble</span>
+        <span class="menu-overlay__label">Contact</span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero Section — scroll-driven coffee ritual -->
+    <!--
+      The media layer (a scroll-scrubbed 100-frame <video>) and the text/UI
+      layer are driven by the SAME scroll progress (0..1). The scrubber in
+      app.js (initHeroVideo) maps progress to the video's currentTime
+      (Frame 0..99), the text choreography (data-hero-anim), and the branch
+      selector reveal (data-hero-select). The hero is pinned inside the
+      .hero-scroll wrapper; scrolling up reverses everything. The video
+      never autoplays.
+    -->
+    <div class="hero-scroll" id="top" data-hero-scroll>
+      <section class="hero" data-hero>
+        <div class="hero__media" aria-hidden="true">
+          <video
+            class="hero__video"
+            data-hero-video
+            src="assets/videos/coffee_hero.mp4"
+            poster="assets/images/coffee-hero-poster.jpg"
+            muted
+            playsinline
+            preload="auto"
+            tabindex="-1"
+          ></video>
+          <div class="hero__overlay"></div>
+        </div>
+
+        <p class="hero__eyebrow" data-hero-anim="eyebrow">The Ritual</p>
+
+        <div class="hero__content">
+          <h1 class="hero__title" data-hero-anim="title">MASTERING THE<br>DARK ARTS OF COFFEE.</h1>
+          <p class="hero__sub" data-hero-anim="sub">A nocturnal ritual dedicated to precision, silence, and the perfect pour.</p>
+          <a class="btn btn--primary" href="#menu" data-hero-anim="cta">Discover Alchemy</a>
+          <p class="hero__hint" data-hero-anim="hint">
+            <span class="hero__hint-line" aria-hidden="true"></span>
+            Scroll to brew
+          </p>
+        </div>
+
+        <div class="hero__select" data-hero-select>
+          <p class="eyebrow hero__select-eyebrow">Choose Your Branch</p>
+          <p class="hero__select-note">Select the location that works best for you.</p>
+          <div class="hero__branch-list" data-hero-branches role="radiogroup" aria-label="Choose a branch"></div>
+          <div class="hero__select-actions">
+            <a class="btn btn--primary hero__book" data-hero-book href="tel:">Book Now</a>
+            <a class="btn btn--ghost hero__menu-link" href="#menu">Explore the Menu</a>
+          </div>
+        </div>
+
+        <div class="hero__progress" data-hero-progress aria-hidden="true">
+          <span class="hero__progress-fill"></span>
+        </div>
+      </section>
+    </div>
+
+    <!-- The Ritual (About) -->
+    <section class="ritual" id="ritual">
+      <div class="container ritual__grid">
+        <div class="ritual__text fade-up">
+          <p class="eyebrow">The Ritual</p>
+          <h2 class="ritual__title">PRECISION BORN FROM SHADOWS.</h2>
+          <p class="ritual__body">We reject the noise. Our spaces are crafted for focus, mimicking the matte silence of a craftsman's workshop. Every extraction is deliberate, every bean sourced with obsessive care. Welcome to the quiet luxury of true coffee artistry.</p>
+          <a class="btn btn--ghost" href="#menu">Read Our Grimoire</a>
+        </div>
+        <div class="ritual__media fade-up">
+          <figure class="ritual__frame">
+            <img class="image-matte" src="assets/images/ritual.jpg" alt="A portafilter resting on dark matte slate with steam rising in cinematic light" width="800" height="1067">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branch Selector & Menu Teaser -->
+    <section class="menu" id="menu">
+      <div class="menu__domain fade-up">
+        <p class="eyebrow">Select Domain</p>
+        <div class="branch-pills" role="group" aria-label="Choose a branch" data-branch-pills></div>
+      </div>
+
+      <h2 class="menu__heading fade-up">CURATED ALCHEMY</h2>
+
+      <div class="container menu__grid" data-products></div>
+
+      <div class="menu__actions fade-up">
+        <a class="btn btn--ghost" href="#gallery">View Full Grimoire</a>
+      </div>
+    </section>
+
+    <!-- Branch Gallery -->
+    <section class="gallery" id="gallery">
+      <div class="gallery__heading fade-up">
+        <p class="eyebrow">Sanctuary</p>
+        <h2 class="gallery__title">GALLERY</h2>
+      </div>
+      <div class="container gallery__grid" data-gallery aria-live="polite"></div>
+    </section>
+
+    <!-- Contact / Directions -->
+    <section class="contact" id="locations">
+      <div class="container contact__inner fade-up">
+        <p class="eyebrow">Contact</p>
+        <p class="contact__note" data-location-note></p>
+        <div class="contact__actions">
+          <a class="btn btn--ghost" data-maps target="_blank" rel="noopener">Directions</a>
+          <a class="btn btn--ghost" data-call>Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer__col">
+      <h5 class="footer__heading">DOMAINS</h5>
+      <a class="footer__link" href="#locations" data-domain="alexandria">Alexandria</a>
+      <a class="footer__link" href="#locations" data-domain="mansoura">Mansoura</a>
+    </div>
+    <div class="footer__col">
+      <h5 class="footer__heading">CONNECTIONS</h5>
+      <a class="footer__link" href="#" data-social="instagram" target="_blank" rel="noopener">Instagram</a>
+      <a class="footer__link" href="#" data-social="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="footer__link" href="#" data-social="facebook" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div class="footer__col footer__col--end">
+      <a class="footer__link" href="#top">Careers</a>
+      <p class="footer__copy">© 2024 COFFEE WIZARD. CRAFTED BY RITUAL.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/shader.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
